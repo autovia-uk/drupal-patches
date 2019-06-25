@@ -1,0 +1,27 @@
+From b96f95a705c305c0f47666585ab85fb083088366 Mon Sep 17 00:00:00 2001
+From: Alex Harries <alex@greyhead.co.uk>
+Date: Tue, 25 Jun 2019 11:00:55 +0100
+Subject: [PATCH] Issue 2664518: cast value of codesnippet.create to an array
+ (patch against 8.x-3.0)
+
+Signed-off-by: Alex Harries <alex@greyhead.co.uk>
+---
+ src/Form/GoogleAnalyticsAdminSettingsForm.php | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/Form/GoogleAnalyticsAdminSettingsForm.php b/src/Form/GoogleAnalyticsAdminSettingsForm.php
+index bd39c33..66ac638 100644
+--- a/src/Form/GoogleAnalyticsAdminSettingsForm.php
++++ b/src/Form/GoogleAnalyticsAdminSettingsForm.php
+@@ -541,7 +541,7 @@ class GoogleAnalyticsAdminSettingsForm extends ConfigFormBase {
+     $form['advanced']['codesnippet']['google_analytics_codesnippet_create'] = [
+       '#type' => 'textarea',
+       '#title' => $this->t('Parameters'),
+-      '#default_value' => $this->getNameValueString($config->get('codesnippet.create')),
++      '#default_value' => $this->getNameValueString((array) $config->get('codesnippet.create')),
+       '#rows' => 5,
+       '#description' => $this->t('Enter one value per line, in the format name|value. Settings in this textarea will be added to <code>gtag("config", "UA-XXXX-Y", {"name":"value"});</code>. For more information, read <a href=":url">documentation</a> in the gtag.js reference.', [':url' => 'https://developers.google.com/analytics/devguides/collection/gtagjs/']),
+       '#element_validate' => [[get_class($this), 'validateParameterValues']],
+-- 
+2.20.1 (Apple Git-117)
+
