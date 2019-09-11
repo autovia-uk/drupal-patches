@@ -1,0 +1,13 @@
+diff --git a/src/Buyacar/Forecourt/Sales/Stock/StockItem.php b/src/Buyacar/Forecourt/Sales/Stock/StockItem.php
+index ba78c99..8bd23aa 100644
+--- a/src/Buyacar/Forecourt/Sales/Stock/StockItem.php
++++ b/src/Buyacar/Forecourt/Sales/Stock/StockItem.php
+@@ -570,7 +570,7 @@ class StockItem extends CoreItem implements SalesItemInterface {
+       if (!empty($apr)) {
+         $apr .= '%';
+       }
+-      $r['Representative APR'] = $apr;
++      $r['APR'] = $apr;
+     }
+ 
+     if ($term = $this->getDefaultFinanceTerm()) {
