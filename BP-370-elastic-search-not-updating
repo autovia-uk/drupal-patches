@@ -1,0 +1,15 @@
+diff --git a/src/Buyacar/Forecourt/Sales/Index/Worker.php b/src/Buyacar/Forecourt/Sales/Index/Worker.php
+index ca014ed..ba22f63 100644
+--- a/src/Buyacar/Forecourt/Sales/Index/Worker.php
++++ b/src/Buyacar/Forecourt/Sales/Index/Worker.php
+@@ -317,6 +317,10 @@ class Worker implements WorkerInterface {
+     $mappings = array();
+ 
+     foreach ($docs as $id => &$doc) {
++
++      // If CAPID is null, don't do anything.
++      if (!isset($doc['CAPID'])) continue;
++
+       if ($doc['van_B']) {
+         $type = 'van';
+       }
