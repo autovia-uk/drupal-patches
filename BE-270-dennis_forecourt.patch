@@ -11,3 +11,16 @@ index ba78c99..8bd23aa 100644
      }
  
      if ($term = $this->getDefaultFinanceTerm()) {
+diff --git a/tests/Buyacar/Forecourt/Sales/Stock/StockItemTest.php b/tests/Buyacar/Forecourt/Sales/Stock/StockItemTest.php
+index a7c3fe3..ba56ea9 100644
+--- a/tests/Buyacar/Forecourt/Sales/Stock/StockItemTest.php
++++ b/tests/Buyacar/Forecourt/Sales/Stock/StockItemTest.php
+@@ -422,7 +422,7 @@ class StockItemTest extends TestCase {
+       'finance type' => $data['data']['defaultFinanceType_S'],
+       'loan amount' => $data['returnData']['defaultFinanceAmount_d'],
+       'Deposit amount' => $data['returnData']['defaultFinanceDeposit_d'],
+-      'Representative APR' => $data['data']['defaultFinanceApr_d'] . '%',
++      'APR' => $data['data']['defaultFinanceApr_d'] . '%',
+       'Loan term' => $data['data']['defaultFinanceTerm_I'] . ' months',
+       'Monthly repayments' => $data['returnData']['defaultFinanceMonthlyPayment_d'],
+       'Optional final payment' => $data['returnData']['defaultFinanceOptionalFinalPayment_d'],
